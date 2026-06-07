@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     email: document.getElementById('email'),
     hours: document.getElementById('hours'),
     secondaryCTA: document.getElementById('secondaryCTA'),
-    ruleTailwind: document.getElementById('ruleTailwind'),
+    typographyStyle: document.getElementById('typographyStyle'),
+    colorMode: document.getElementById('colorMode'),
     ruleSEO: document.getElementById('ruleSEO'),
     ruleResponsive: document.getElementById('ruleResponsive'),
     ruleComponents: document.getElementById('ruleComponents')
@@ -340,13 +341,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = fields.email.value.trim();
     const hours = fields.hours.value.trim();
     const secondaryCTA = fields.secondaryCTA.value.trim();
+    const typographyStyle = fields.typographyStyle.value;
+    const colorMode = fields.colorMode.value;
 
     // Get checked services
     const checkedCheckboxes = servicesCheckboxContainer.querySelectorAll('input[type="checkbox"]:checked');
     const selectedServices = Array.from(checkedCheckboxes).map(cb => cb.value);
 
     // Checkbox Compilation Rules
-    const useTailwind = fields.ruleTailwind.checked;
     const useSEO = fields.ruleSEO.checked;
     const useResponsive = fields.ruleResponsive.checked;
     const useComponents = fields.ruleComponents.checked;
@@ -371,6 +373,8 @@ CORE PROJECT SPECIFICATIONS
     if (email) prompt += `- Contact Email: ${email}\n`;
     if (hours) prompt += `- Business Hours: ${hours}\n`;
     if (secondaryCTA) prompt += `- Secondary CTA: ${secondaryCTA}\n`;
+    if (typographyStyle) prompt += `- Typography Style: ${typographyStyle}\n`;
+    if (colorMode) prompt += `- Color Mode Strategy: ${colorMode}\n`;
 
     if (selectedServices.length > 0) {
       prompt += `\n=========================================
@@ -388,11 +392,7 @@ DESIGN & ARCHITECTURE GUIDELINES
 2. Visual Quality: Use harmonized color accents matching the palette. Avoid plain colors. Leverage subtle gradients, borders, shadows, and smooth hover effects on buttons and interactive elements.
 `;
 
-    if (useTailwind) {
-      prompt += `3. CSS Implementation: Build the interface using Tailwind CSS utility classes. Focus on clean spacing, flexbox/grid containers, responsive flex directions, and hovering scale adjustments.\n`;
-    } else {
-      prompt += `3. CSS Implementation: Build using vanilla CSS. Use modern layout standards like CSS Custom Properties (variables), grid setups, custom animations, and clean hover transitions.\n`;
-    }
+    prompt += `3. Tech Stack: Build the interface as a React application (functional components with hooks, no class components) styled entirely with Tailwind CSS utility classes. Do not write custom CSS files or inline styles — express all spacing, layout (flexbox/grid), color, typography, and hover/focus states through Tailwind classes. Use Framer Motion for scroll reveals, hover/tap micro-interactions, and section transitions, and use lucide-react for all icons (no inline SVGs or icon fonts). Install any required packages as needed.\n`;
 
     if (useResponsive) {
       prompt += `4. Responsiveness: Implement absolute mobile-first architecture. Ensure all font sizes scale down beautifully, images maintain correct aspect ratios, and padding is tight on mobile screens but comfortable on desktop.\n`;
@@ -403,13 +403,13 @@ DESIGN & ARCHITECTURE GUIDELINES
     }
 
     if (useComponents) {
-      prompt += `6. Component Modularity: Write components cleanly, breaking them down into reusable structures with clear parameter passing where applicable.\n`;
+      prompt += `6. Component Modularity: Break the page down into focused functional components (e.g., Hero, Services, About, ContactFooter) in separate files, each receiving its content via props with clear, typed interfaces.\n`;
     }
 
     prompt += `\n=========================================
 DELIVERY
 =========================================
-Deliver ONE highly detailed, fully functional single-page layout code structure. Do not use incomplete mock code or stub outputs. Make sure all scripts, styles, and markup are fully integrated and ready to run with no errors.`;
+Deliver a fully functional React + Tailwind CSS single-page application. Provide each component as its own file (JSX), plus the root App component that assembles them, ready to run in a standard React + Tailwind project with no errors. Do not use incomplete mock code or stub outputs — all markup, props, and styling must be fully integrated.`;
 
     compiledPromptCode.textContent = prompt;
   }
