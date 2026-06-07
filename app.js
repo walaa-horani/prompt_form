@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const advancedAccordion = document.getElementById('advancedAccordion');
   const advancedContent = document.getElementById('advancedContent');
   
+  const customNicheGroup = document.getElementById('customNicheGroup');
+  const customNicheInput = document.getElementById('customNicheInput');
+
   const servicesCheckboxContainer = document.getElementById('servicesCheckboxContainer');
   const customServiceInput = document.getElementById('customServiceInput');
   const addCustomServiceBtn = document.getElementById('addCustomServiceBtn');
@@ -306,8 +309,11 @@ document.addEventListener('DOMContentLoaded', () => {
       fields.mainCTA.value = nicheDefaults[val].cta;
       updateServicesList(val);
     }
+    customNicheGroup.style.display = (val === 'Custom Niche') ? 'block' : 'none';
     compilePrompt();
   });
+
+  customNicheInput.addEventListener('input', compilePrompt);
 
   // Accordion Toggle
   advancedToggle.addEventListener('click', () => {
@@ -330,7 +336,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dynamic Prompt Compilation
   function compilePrompt() {
     const name = fields.bizName.value.trim() || "[Business Name]";
-    const niche = fields.bizNiche.value;
+    const niche = (fields.bizNiche.value === 'Custom Niche')
+      ? (customNicheInput.value.trim() || 'Custom Niche')
+      : fields.bizNiche.value;
     const colors = fields.colorPalette.value;
     const vibe = fields.designVibe.value;
     const mainCTA = fields.mainCTA.value.trim() || "Get Started";
