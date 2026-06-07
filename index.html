@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROMPT BUILDER // LOCAL BUSINESS WEBSITES</title>
+  <!-- Google Fonts: Anton (Display), Inter (Body), JetBrains Mono (Code/Stats) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow glow-red"></div>
+  <div class="ambient-glow glow-blue"></div>
+  <div class="grid-overlay"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-logo">
+        <span class="status-indicator"></span>
+        <span class="logo-mono">PROMPT_SYSTEM // V1.2.0</span>
+      </div>
+      <h1 class="display-title">PROMPT BUILDER <span class="accent-red">//</span> LOCAL BUSINESS</h1>
+      <p class="subtitle">Aggressive parameters. High-performance prompt compilation for front-end generations.</p>
+    </header>
+
+    <!-- Main Workspace Grid -->
+    <main class="workspace-grid">
+      
+      <!-- Left Column: Configuration Card (Red team coding) -->
+      <section class="config-card card team-red">
+        <div class="card-header">
+          <div class="header-tag">TEAM_A // INPUTS</div>
+          <h2 class="h2-title">CONFIGURATION PANEL</h2>
+        </div>
+        
+        <form id="promptForm" class="config-form" onsubmit="event.preventDefault();">
+          
+          <!-- Grid Form Fields -->
+          <div class="form-row">
+            <div class="input-group">
+              <label for="bizName">BUSINESS NAME</label>
+              <input type="text" id="bizName" value="Apex Roofing & Construction" placeholder="Enter business name...">
+              <span class="helper-text">Primary brand identity</span>
+            </div>
+            
+            <div class="input-group">
+              <label for="bizNiche">BUSINESS NICHE</label>
+              <select id="bizNiche">
+                <option value="Roofing Services">Roofing Services</option>
+                <option value="Esports & Gaming Center">Esports & Gaming Center</option>
+                <option value="Fitness & Crossfit Gym">Fitness & Crossfit Gym</option>
+                <option value="Specialty Coffee Shop">Specialty Coffee Shop</option>
+                <option value="Creative Web Agency">Creative Web Agency</option>
+                <option value="Software & SaaS Development">Software & SaaS Development</option>
+                <option value="IT Support & Tech Solutions">IT Support & Tech Solutions</option>
+                <option value="High-End Steakhouse">High-End Steakhouse</option>
+                <option value="Dental Practice">Dental Practice</option>
+                <option value="Pet Grooming & Spa">Pet Grooming & Spa</option>
+                <option value="Law Firm & Legal Services">Law Firm & Legal Services</option>
+                <option value="Barbershop & Hair Salon">Barbershop & Hair Salon</option>
+                <option value="Auto Repair & Detailing">Auto Repair & Detailing</option>
+                <option value="Real Estate Agency">Real Estate Agency</option>
+                <option value="Plumbing & HVAC Services">Plumbing & HVAC Services</option>
+                <option value="Bakery & Pastry Shop">Bakery & Pastry Shop</option>
+                <option value="Medical Clinic">Medical Clinic</option>
+                <option value="Custom Niche">Other / Custom</option>
+              </select>
+              <span class="helper-text">Target industry segment</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <label for="colorPalette">COLOR PALETTE</label>
+              <select id="colorPalette">
+                <option value="Midnight Gold (Gold, Secondary Black, Off-White)">Midnight Gold (Premium & Luxury)</option>
+                <option value="ESportsArena (Stark Red, Electric Blue, Dark Matte Black)">ESportsArena (Competitive & Aggressive)</option>
+                <option value="Nordic Mint (Clean Sage, Slate Blue, Crisp White)">Nordic Mint (Modern & Organic)</option>
+                <option value="Neon Cyberpunk (Hot Pink, Cyber Cyan, Dark Background)">Neon Cyberpunk (Futuristic & Vibrant)</option>
+                <option value="Minimalist Gray (Slate Gray, Charcoal, Clean Silver)">Minimalist Gray (Clean & Tech)</option>
+                <option value="Custom Scheme">Other / Custom</option>
+              </select>
+              <span class="helper-text">Primary & accent colors</span>
+            </div>
+
+            <div class="input-group">
+              <label for="designVibe">DESIGN STYLE / VIBE</label>
+              <select id="designVibe">
+                <option value="Professional, Trustworthy, clean grids, spacious">Professional & Trustworthy</option>
+                <option value="Aggressive, angular, fast transitions, glowing accents">Aggressive & Competitive</option>
+                <option value="Minimalist, raw, typographic, clean spacing">Minimalist & Architectural</option>
+                <option value="Playful, warm, smooth curves, organic gradients">Warm & Friendly</option>
+                <option value="Dark mode, sleek glassmorphism, bright glows">Sleek Cyber/Glassmorphism</option>
+              </select>
+              <span class="helper-text">Visual personality guidelines</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group full-width">
+              <label for="mainCTA">MAIN CALL TO ACTION (CTA)</label>
+              <input type="text" id="mainCTA" value="Schedule Free Estimate" placeholder="e.g., Book an Appointment, Get a Free Quote">
+              <span class="helper-text">Primary action button copy</span>
+            </div>
+          </div>
+
+          <!-- Advanced Options Accordion -->
+          <div class="accordion-container" id="advancedAccordion">
+            <button type="button" class="accordion-trigger" id="advancedToggle">
+              <span>ADVANCED SYSTEM CONFIGURATION</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            
+            <div class="accordion-content" id="advancedContent">
+              <div class="accordion-inner">
+                <div class="form-row">
+                  <div class="input-group">
+                    <label for="tagline">BUSINESS TAGLINE</label>
+                    <input type="text" id="tagline" value="Trusted Roofing & Restoration Specialists in North County" placeholder="Catchy brand slogan...">
+                  </div>
+                  <div class="input-group">
+                    <label for="address">FULL ADDRESS</label>
+                    <input type="text" id="address" value="1558 Woods Valley Rd, Valley Center, CA 92082" placeholder="Physical location...">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="input-group">
+                    <label for="phone">WHATSAPP / PHONE NUMBER</label>
+                    <input type="text" id="phone" value="+1 (760) 555-0192" placeholder="Contact number...">
+                  </div>
+                  <div class="input-group">
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input type="email" id="email" value="contact@apexroofingrestoration.com" placeholder="Contact email...">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="input-group full-width">
+                    <label>MAIN SERVICES (AUTOMATIC SELECTIONS)</label>
+                    <div id="servicesCheckboxContainer" class="services-checkbox-grid">
+                      <!-- Dynamic service checkboxes will be populated here -->
+                    </div>
+                    <div class="add-custom-service-row">
+                      <input type="text" id="customServiceInput" placeholder="Add custom service...">
+                      <button type="button" id="addCustomServiceBtn" class="btn btn-secondary btn-sm">ADD SERVICE</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="input-group">
+                    <label for="hours">OPENING HOURS</label>
+                    <input type="text" id="hours" value="Mon-Fri: 8:00 AM - 5:00 PM, Sat: 9:00 AM - 2:00 PM" placeholder="Operating hours...">
+                  </div>
+                  <div class="input-group">
+                    <label for="secondaryCTA">SECONDARY CTA</label>
+                    <input type="text" id="secondaryCTA" value="View Gallery" placeholder="Secondary button text...">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specialized Prompts Toggle Options -->
+          <div class="checkbox-container-section">
+            <h3 class="checkbox-section-title">SPECIALIZED COMPILATION RULES</h3>
+            
+            <div class="checkbox-grid">
+              <label class="custom-checkbox">
+                <input type="checkbox" id="ruleTailwind" checked>
+                <span class="box"></span>
+                <span class="label-text">Require Tailwind CSS rules</span>
+              </label>
+
+              <label class="custom-checkbox">
+                <input type="checkbox" id="ruleSEO" checked>
+                <span class="box"></span>
+                <span class="label-text">Enforce Strict SEO & Meta Tags</span>
+              </label>
+
+              <label class="custom-checkbox">
+                <input type="checkbox" id="ruleResponsive" checked>
+                <span class="box"></span>
+                <span class="label-text">Apply mobile-first constraints</span>
+              </label>
+
+              <label class="custom-checkbox">
+                <input type="checkbox" id="ruleComponents">
+                <span class="box"></span>
+                <span class="label-text">Enforce Component Modularization</span>
+              </label>
+            </div>
+          </div>
+
+        </form>
+      </section>
+
+      <!-- Right Column: Compiler Output Card (Blue team coding) -->
+      <section class="compiler-card card team-blue">
+        <div class="card-header">
+          <div class="header-tag">TEAM_B // COMPILER OUTPUT</div>
+          <h2 class="h2-title">PROMPT OUTPUT PREVIEW</h2>
+        </div>
+
+        <div class="output-container">
+          <div class="output-panel-header">
+            <div class="left-controls">
+              <span class="status-dot green"></span>
+              <span class="status-label">COMPILER READY // OUTPUT_RAW.TXT</span>
+            </div>
+            <div class="right-controls">
+              <span class="badge">PROMPT_SYSTEM</span>
+            </div>
+          </div>
+          
+          <div class="code-view-wrapper">
+            <pre class="code-block"><code id="compiledPromptCode" class="mono-text">Generating system instructions...</code></pre>
+          </div>
+          
+          <div class="actions-panel">
+            <button id="copyBtn" class="btn btn-primary btn-lg">
+              <span class="btn-text">COPY PROMPT // SYSTEM CODE</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-left">
+        <span class="console-text">CONSOLE // TERMINAL ONLINE</span>
+      </div>
+      <div class="footer-right">
+        <span>© 2026 PROMPT_ENGINE. ALL RIGHTS RESERVED.</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
